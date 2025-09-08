@@ -1,0 +1,23 @@
+
+name: hybrid_ai_assistant
+description: Hybrid AI assistant with offline ASR and online LLM support
+publish_to: 'none'
+version: 1.0.0+1
+environment:
+  sdk: ">=2.18.0 <4.0.0"
+dependencies:
+  flutter:
+    sdk: flutter
+  record: ^5.1.0
+  just_audio: ^0.9.34
+  sqflite: ^2.2.5
+  path_provider: ^2.0.11
+  dio: ^5.4.0
+  shared_preferences: ^2.2.0
+  flutter_secure_storage: ^9.0.0
+  google_sign_in: ^6.1.0
+  googleapis: ^9.0.0
+  cryptography: ^3.0.2
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
