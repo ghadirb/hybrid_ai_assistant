@@ -1,7 +1,6 @@
-
 workflows:
   android-release:
-    name: Android Release + Publish
+    name: Android Release Only
     environment:
       flutter: stable
     scripts:
@@ -17,8 +16,3 @@ workflows:
     artifacts:
       - build/app/outputs/flutter-apk/*.apk
       - build/app/outputs/bundle/release/*.aab
-    publishing:
-      google_play:
-        credentials: $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
-        track: production
-        in_app_update_priority: 3
