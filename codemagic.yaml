@@ -1,0 +1,24 @@
+
+workflows:
+  android-release:
+    name: Android Release + Publish
+    environment:
+      flutter: stable
+    scripts:
+      - name: Prepare
+        script: |
+          echo "Running flutter pub get..."
+          flutter pub get
+      - name: Build
+        script: |
+          echo "Building release APK and AAB..."
+          flutter build apk --release -t lib/main.dart
+          flutter build appbundle --release -t lib/main.dart
+    artifacts:
+      - build/app/outputs/flutter-apk/*.apk
+      - build/app/outputs/bundle/release/*.aab
+    publishing:
+      google_play:
+        credentials: $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
+        track: production
+        in_app_update_priority: 3
