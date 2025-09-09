@@ -1,3 +1,0 @@
-
-include ':app'
-rootProject.name = 'hybrid_ai_assistant'
